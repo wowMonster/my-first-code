@@ -27,7 +27,7 @@ gulp.task('images',function(){
 })
 //将sass文件转化为css文件
 gulp.task('sass',function(){
-	return gulp.src('css/**/*.scss').pipe(sass()).pipe(cleanCss()).pipe(gulp.dest('dist/css'))
+	return gulp.src('scss/**/*.scss').pipe(sass()).pipe(cleanCss()).pipe(gulp.dest('dist/css'))
 })
 gulp.task('sever',function(){
 	connect.server({
@@ -38,7 +38,7 @@ gulp.task('sever',function(){
 //监听文件   index 以及后面的css  js等
 gulp.task('watch',function(){
 	gulp.watch('index.html',['copy-index']);
-	
+	gulp.watch('scss/main.scss',['sass']);
 	
 	
 	
